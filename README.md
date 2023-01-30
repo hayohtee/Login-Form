@@ -19,3 +19,7 @@ hardcoded values.
 5. Display a welcome message with the username if successful and hide the form.
 6. Display an error message if not successful and redirect the user back to
 the form.
+
+## My Approach
+Use startActivityForResult to carry out the validation in another Activity
+and then return the result.
