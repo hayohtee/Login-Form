@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
-import android.widget.Toast
 import androidx.core.view.isVisible
 import com.google.android.material.button.MaterialButton
 
@@ -43,11 +42,6 @@ class FormActivity : AppCompatActivity() {
                     finish()
                 }
 
-            } else {
-                Toast.makeText(
-                    baseContext, "Please fill all the fields",
-                    Toast.LENGTH_LONG
-                ).show()
             }
         }
     }
