@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Login Form</string>
+    <string name="header_text">
+        Please enter your username and password below to login
+    </string>
+    <string name="username_label">Username</string>
+    <string name="password_label">Password</string>
+    <string name="login">Login</string>
+    <string name="welcome_text">Welcome, %s</string>
+    <string name="error_username">Unknown user, \'%s\' not found</string>
+    <string name="error_password">Password entered does not match</string>
 </resources>
