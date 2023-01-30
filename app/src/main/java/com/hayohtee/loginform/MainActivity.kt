@@ -1,24 +1,27 @@
 package com.hayohtee.loginform
 
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import android.widget.TextView
+import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
+
+const val FORM_ACTIVITY_ID = 10
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-    }
+        val resultLauncher = registerForActivityResult(StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val username = result.data?.getStringExtra(MESSAGE_KEY)
+                findViewById<TextView>(R.id.welcome).text = username
+            }
+        }
 
-    companion object {
-        // map username with password for registered users
-        val registeredUsers = mapOf(
-            "john_doe" to "john123",
-            "marie.james" to "marie36",
-            "mad_dog" to "paul21",
-            "hayohtee" to "olamilekan47"
-        )
+        val intent = Intent(this, FormActivity::class.java)
+        resultLauncher.launch(intent)
     }
-
 }
